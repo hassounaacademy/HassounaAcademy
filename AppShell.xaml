@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="HassounaAcademy.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:HassounaAcademy"
+    Shell.FlyoutBehavior="Disabled">
+    <TabBar>
+        <Tab Title="Anybody" Icon="person.png">
+            <ShellContent Title="Anybody" Icon="person.png">
+                <local:PageShowCourses type="Anybody"  />
+            </ShellContent>
+        </Tab>
+        <Tab Title="Knowledge" Icon="knowledge.png">
+            <ShellContent Title="Knowledge" Icon="knowledge.png" >
+                <local:PageShowCourses type="Knowledge" />
+            </ShellContent>
+        </Tab>
+
+        <Tab Title="∞" Icon="alltools.png">
+            <ShellContent Title="∞" Icon="alltools.png" ContentTemplate="{DataTemplate local:PageAllTools}"/>
+        </Tab>
+
+        <Tab Title="Database" Icon="database.png">
+            <ShellContent Title="Database" Icon="database.png">
+                <local:PageShowCourses type="Database"/>
+            </ShellContent>
+        </Tab>
+        <Tab Title="Great" Icon="bigcourses.png">
+            <ShellContent Title="Great" Icon="bigcourses.png">
+                <local:PageShowCourses type="Great"/>
+            </ShellContent>
+        </Tab>
+    </TabBar>
+
+</Shell>

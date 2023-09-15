@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HassounaAcademy.PageShowCourses"
+             Title="PageShowCourses" Loaded="ContentPage_Loaded">
+    <Grid RowDefinitions="120,*">
+        <Border StrokeShape="RoundRectangle 20" WidthRequest="350" HeightRequest="100" Grid.Row="0">
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label Text="My Courses" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"/>
+                <Image Source="studygift.png" WidthRequest="100" HeightRequest="100"/>
+            </HorizontalStackLayout>
+        </Border>
+        <CollectionView x:Name="cv"  Margin="10" Grid.Row="1">
+            <CollectionView.EmptyView>
+                <Label Text="No Data"/>
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <Border Margin="30,10" Padding="10" StrokeShape="RoundRectangle 20" Background="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Gray900}}">
+                            <Grid RowDefinitions="*,45" ColumnDefinitions="*,130" RowSpacing="5" ColumnSpacing="5">
+                                <Label Text="{Binding name_en}" FontSize="16" Padding="5"/>
+                                <Image Source="{Binding image_url}" WidthRequest="120" HeightRequest="90" Grid.Column="1"/>
+                                <Grid ColumnDefinitions="*,*" Grid.Row="1" Grid.ColumnSpan="2" ColumnSpacing="5">
+                                    <Button Text="Open" Command="{Binding open}" HeightRequest="40"/>
+                                    <Button Text="Copy" Command="{Binding copy}" HeightRequest="40" Grid.Column="1"/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

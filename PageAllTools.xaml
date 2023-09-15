@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HassounaAcademy.PageAllTools" Title="Courses Tools">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Border StrokeShape="RoundRectangle 20" WidthRequest="350" HeightRequest="100">
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <Label Text="My Courses Tools" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"/>
+                    <Image Source="tools.png" WidthRequest="85" HeightRequest="85"/>
+                </HorizontalStackLayout>
+            </Border>
+            <Button x:Name="btnOtherCourses" Text="Other Courses" Clicked="btnOtherCourses_Clicked"/>
+            <Button x:Name="btnAllCourses" Text="All Courses" Clicked="btnAllCourses_Clicked" />
+            <Border StrokeShape="RoundRectangle 20" Padding="5">
+                <VerticalStackLayout>
+                    <Button x:Name="btnCopyLinks" Text="Copy Anybody Links" Margin="7" Clicked="btnCopyLinks_Clicked" />
+                    <Button x:Name="btnCopyLinksAsHTML" Text="Copy Anybody Links As HTML" Margin="7" Clicked="btnCopyLinksAsHTML_Clicked" />
+                    <HorizontalStackLayout HorizontalOptions="Center">
+                        <RadioButton Content=" 1 " CheckedChanged="RadioButton_For_Copy_CheckedChanged" IsChecked="True"/>
+                        <RadioButton Content=" 2 " CheckedChanged="RadioButton_For_Copy_CheckedChanged"/>
+                        <RadioButton Content=" 3 " CheckedChanged="RadioButton_For_Copy_CheckedChanged"/>
+                        <RadioButton Content=" 4 " CheckedChanged="RadioButton_For_Copy_CheckedChanged"/>
+                        <RadioButton Content=" 5 " CheckedChanged="RadioButton_For_Copy_CheckedChanged"/>
+                        <RadioButton Content=" 6 " CheckedChanged="RadioButton_For_Copy_CheckedChanged"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+            <Border StrokeShape="RoundRectangle 20" Padding="5">
+                <VerticalStackLayout>
+                    <Entry x:Name="txtSearch" Placeholder="Search Text" Margin="5"/>
+                    <Button x:Name="btnSearch" Text="Search Now" Clicked="btnSearch_Clicked" Margin="5"/>
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
